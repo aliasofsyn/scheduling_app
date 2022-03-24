@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawmer Inc</title>
+    <link rel="stylesheet" href="style2.css">
+    <script type="text/javascript" src="user.json"></script>
+</head>
+<body> 
+
+
+    <nav>
+        <h2 class="logo">DC INC.</h2>
+
+            <ul class=" navLinks">
+                <li>
+                    <a href="home.html" class="active">
+                        Home
+                    </a>
+
+                <li>
+                    <a href="Employees.html">
+                        Employees
+                    </a>
+
+                <li>
+                    <a>
+                        <div class="dropdown">
+                            <button onclick = Dropdown() class="DPButton">User</button>
+                            <div id="DP" class="DPContent">
+                              <a href="info.html">Info</a>
+                              <a href="index.html">Logout</a>
+                            </div>
+                          </div>
+                    </a>
+                </li>
+            </ul>
+    </nav>
+
+
+
+
+
+<div id="container">
+    <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+            <button id="backButton">Back</button>
+            <button id="nextButton">Next</button>
+        </div>
+    </div>
+        <div id="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+
+        </div>
+
+    <div id="calendar"></div>
+</div>
+
+<div id="addShift">
+    <h2> New Shift</h2>
+    <input id="shiftTitleInput" list="employee" placeholder="Enter Event..."/>
+    <datalist id="employee">
+        <script>
+        //loops through json file to give client option of choosing from list of employees
+        var employeeOpt = document.getElementById('employee')
+        fetch('user.json')
+        .then(response => response.json())
+        .then(json=>{
+            for(let i = 0; i < json.users.length; i++){
+                var option = document.createElement("option")
+                var name = document.createTextNode(json.users[i].Name)
+                option.appendChild(name)
+                employeeOpt.insertBefore(option,employeeOpt.lastChild);
+            }
+        })
+    </script>
+    </datalist>
+
+    <h3>Time:</h3>
+
+    <input class = "shiftTime" id="shiftStart" type = 'number' min="1" max="12" placeholder="1">
+    <input class = 'shiftTime' id= 'shiftEnd' type = 'number' min="1" max="12" placeholder="1">
+    <button id="saveButton">Save</button>
+    <button id="cancelButton">Cancel</button>
+</div>
+
+
+
+
+<div id="deleteShift">
+<h2>Shift</h2>
+<ul id="shiftList">
+</ul>
+<button id="addButton">Add Shift</button>
+<button id="deleteButton">Delete</button>
+<button id="closeButton">Cancel</button>
+
+</div>
+
+
+
+
+<div id="newEventBG"></div>
+
+
+<script src = "app.js"></script>
+<script src = "user.json"></script>
+
+
+</body>
+</html>

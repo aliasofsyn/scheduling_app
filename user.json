@@ -1,0 +1,55 @@
+{"users" :[    
+    {
+        "id" : 1,
+        "Username":"Welcome",
+        "Password":"user1",
+        "Admin": true,
+        "Name" : "Crawmer"
+        
+    },
+    {
+        "id" : 2,
+        "Username":"Welcome",
+        "Password":"user2",
+        "Admin": false,
+        "Name" : "John"
+    },  
+    {
+        "id" : 7,
+        "Username":"lol3",
+        "Password":"okay",
+        "Admin": false,   
+        "Name" : "Lauren"
+    },    
+    {
+        "id" : 3,
+        "Username":"lol4",
+        "Password":"lol2",
+        "Admin": false,
+        "Name" : "Bob"
+
+    },     
+    {
+        "id" : 4,
+        "Username":"lol5",
+        "Password":"lol2",
+        "Admin": false,
+        "Name" : "Carmen"
+
+    },     
+    {
+        "id" : 5,
+        "Username":"lol6",
+        "Password":"lol2",
+        "Admin": false,
+        "Name" : "Tony"
+
+    },     
+    {
+        "id" : 6,
+        "Username":"lol7",
+        "Password":"lol2",
+        "Admin": false,
+        "Name" : "Xavier"
+    }       
+]}
